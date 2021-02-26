@@ -17,6 +17,16 @@
 		province[2] = new Array("朝阳区", "大兴区", "海淀区", "东城区", "西城区");
 		province[3] = new Array("凉州自治州", "成都市", "攀枝花市", "绵阳市", "自贡市");
 
+		function showTime(){
+			var time=new Date();
+			var year=time.getFullYear();
+			var month=time.getMonth()+1;
+			var date=time.getDate();
+			var hour=time.getHours();
+			var minute=time.getMinutes();
+			var second=time.getSeconds();
+			$("#time").html("现在时间："+year+"年"+month+"月"+date+"日  "+hour+":"+minute+":"+second).css("color","#333");
+		}
 		function checkName() {
 			var name = $("input[name='username']").val();
 			if (name == null | name == "") {
@@ -172,6 +182,7 @@
 				city.html(str);
 			});
 			//绑定事件end
+			setInterval("showTime()",1000);
 		});
 	</script>
 	<title>程序创新大会报名</title>
@@ -186,6 +197,11 @@
 			<h3>欢迎进入程序创新大会报名</h3>
 		</div>
 		<!--标题部分end-->
+		<div id="" class="timer">
+			<span id="time">
+				
+			</span>
+		</div>
 	</div>
 	<!-- 顶部背景图end-->
 	<!--导航start-->

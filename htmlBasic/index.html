@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="js/checkForm.js" type="text/javascript" charset="utf-8"></script>
+		<title>程序创新大会报名</title>
+	</head>
+	<body>			
+			<!-- 顶部背景图start-->
+			<div id="" class="top-bg-img">
+				<a name="top" ></a>
+				<!--标题部分start-->
+				<div id="" class="logo">
+					<h3>欢迎进入程序创新大会报名</h3>
+				</div>
+				<!--标题部分end-->
+			</div>
+			<!-- 顶部背景图end-->
+			<!--导航start-->
+		<div id="" class="nav-bg">
+			<div id="" class="nav">
+				<div id="" class="top-menu">
+					<ul class="top-ul">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">科学普及</a></li>
+						<li><a href="#">院士专家</a></li>
+						<li><a href="#">学会工作</a></li>
+						<li><a href="#">青少年</a></li>
+						<li><a href="rank.html">往届比赛结果</a></li>
+						<li><a href="#">创新创业</a></li>
+					</ul>
+				</div>
+				<div id="" class="top-search" align="right">
+					<input class="search" type="text" name="" id="" value="" placeholder="请输入搜索内容"/>
+				</div>
+			</div>
+		</div>
+		<!--导航end-->
+		<!--当前位置start-->
+		<div id="" class="where clear">
+			当前位置：首页&emsp;>&emsp;程序创新大赛&emsp;>&emsp;报名入口
+		</div>
+		<!--当前位置end-->
+		<!--注册信息界面start-->
+		<div id="" class="gather-info-frame">
+			<!--标题栏start-->
+			<div id="" class="top-frame">
+				<a href="introduce.html" target="details">大会流程</a>
+				<div id="" class="info-title">
+					请填写报名信息报名
+				</div>
+			</div>
+			<!--标题栏end-->
+			<!--左侧start-->
+			<div id="" class="left-side">				
+				<iframe name="details" src="" width="90%" height="300px" frameborder="no"></iframe>
+			</div>
+			<!--左侧end-->
+			<!--注册信息主体start-->
+			<div id="" class="info-body">
+				<form action="success.html" method="get" autocomplete="on" onsubmit="return checkForm()">
+					<label for="profile">选择你的头像：</label>
+					<!-- 这里为了练习所以设置多张，我也不晓得还可以什么图片可以上传多张-->
+					<input type="file" name="profile" id="profile" value="" multiple="multiple" required="required"/><br>
+					<label for="username">姓&emsp;&emsp;名：</label>
+					<input type="text" id="username" name="username" placeholder="请输入你的姓名" required="required" onblur="checkName()"/><span id="namePrompt">长度不可低于4位</span><br />
+					<!--对单选框无效-->
+					<label for="sexm">性&emsp;&emsp;别：</label>
+					<input type="radio" name="sex" id="sexmale" value="男" />男
+					<input type="radio" name="sex" id="sexfemale" value="女" checked="checked" />女<br>
+					<!--对复选框无效-->
+					<label id="interest-lable">选择你的兴趣方向：</label>
+					<input type="checkbox"  id="allCheck" value="" onclick="inerestAll()" />全选
+					<input type="checkbox" name="one"  value="security" onclick="interestOne()"/>网络安全
+					<input type="checkbox" name="one" value="AI" onclick="interestOne()"/>人工智能
+					<input type="checkbox" name="one"  value="IOT" onclick="interestOne()"/>物联网
+					<input type="checkbox" name="one" value="algorithm" onclick="interestOne()"/>算法<span id="interestPrompt"></span><br>
+					<label for="pwd1">密&emsp;&emsp;码：</label>
+					<input type="password" id="pwd1" name="" placeholder="请输入密码" required="required" onblur="checkPassword()"/><span id="pwdPrompt">长度不可低于8位</span><br>
+					<label for="pwd2">确认密码：</label>
+					<input type="password" id="pwd2" name="password" placeholder="请再次输入密码" required="required" onblur="comparePassword()"/><span id="pwd2Prompt"></span><br>
+					<label for="telephone">手&emsp;&emsp;机：</label>
+					<input type="tel" name="telephone" id="telephone" value="" placeholder="请输入你的手机号" required="required" onblur="checkPhone()"/><span id="phonePrompt"></span><br>
+					<label for="email">邮&emsp;&emsp;箱：</label>
+					<input type="email" id="email" name="email" value="" placeholder="请输入邮箱" required="required" onblur="checkEmail()"/><span id="emailPrompt"></span><br>
+					<label for="academy">院&emsp;&emsp;校：</label>
+					<datalist id="school">
+						<option value="pku">北京大学</option>
+						<option value="tsu">清华大学</option>
+						<option value="ruc">人民大学</option>
+					</datalist>
+					<input list="school" type="text" name="academy" id="academy" value="" required="required" placeholder="请输入你的学校" onblur="checkSchool()"/><span id="schoolPrompt"></span><br>
+					<datalist id="specialize">
+						<option value="1">软件工程</option>
+						<option value="2">人工智能</option>
+						<option value="3">网络安全</option>
+						<option value="4">大数据</option>
+					</datalist>
+					<label for="major">专&emsp;&emsp;业：</label>
+					<input list="specialize" type="text" name="major" id="major" value="" placeholder="请输入你的专业" required="required" onblur="checkSpecialize()"/><span id="specializePrompt"></span><br>
+					<label for="region">请选择你想参加的地区：</label>
+					<!-- required对select无用 -->
+					<select id="province" name="" required="required" onchange="changecity(this.value)">
+						<option value="-1">---请选择省份---</option>
+						<option value="0">安徽省</option>
+						<option value="1">江苏省</option>
+						<option value="2">北京</option>
+						<option value="3">四川省</option>
+					</select>
+					<select name="" id="city" required="required">
+						<option>--请先选择省份--</option>
+					</select>
+					<span id="cityPrompt">						
+					</span>
+					<br>
+					<label>我们正在征集下次比赛时间，请进行投票选择：</label>
+					<input type="date" name="nextMatchDate" id="nextMatchDate" value="" required="required"/><br>
+					<textarea rows="10" cols="40" readonly="readonly" class="rule">
+						参赛规则：				
+							请仔细阅读参赛的详细规则，并确你并不会违反相关规定。	
+									。。。。。。。
+					</textarea><br>
+					<!-- <input type="image" name="submit" id="submit" value="" src="img/submit.jpg" width="10%" height="10%" /> -->
+					<input type="checkbox" name="" id="agree" value="" />我已知晓该规定
+					<input type="submit" value="提交" class="submit"/>
+					<input type="reset" value="重置" class="reset"/>
+				</form>
+			</div>
+			<!--注册信息主体end-->
+		</div>
+		<!--注册信息界面end-->
+		<!--footer start-->
+		<div id="" class="footer">
+			<div id="" class="contact">
+				<ul class="footer-ul">
+					<li><a href="#">关于我们</a></li>
+					<li class="spilt">|</li>
+					<li><a href="#">联系我们</a></li>
+					<li class="spilt">|</li>
+					<li><a href="#">网站地图</a></li>
+					<li class="spilt">|</li>
+					<li><a href="#">网站声明</a></li>
+				</ul>
+			</div>
+			<div id="" class="copyright clear">
+				Copyright 2021 sue & hh All Rights Reserved hh&copy;版权所有 备案号：XXXX
+			</div>
+		</div>
+		<!--footer end-->
+	</body>
+</html>
+

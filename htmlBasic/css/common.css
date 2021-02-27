@@ -44,17 +44,18 @@ a:hover{
 	line-height: 60px;
 }
 .nav{
+	height: 60px;
+	line-height: 60px;
 	width: 1400px;
-	background-color: greenyellow;
 	margin: 0 auto;
+	
 }
 .top-menu{
-	
+	height: 60px;
 	width: 1000px;
 	float: left;
 }
 .top-search{
-	
 	width: 400px;
 	float: left;
 }

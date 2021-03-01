@@ -25,7 +25,7 @@
 				$("#namePrompt").html("用户名不可为空").css("color", "red");
 				return false;
 			} else if (/^[a-zA-Z]\w{3,}/.test(name) == false) {
-				$("#namePrompt").html("不可以数字开头，长度不可低于4位").css("color", "red");
+				$("#namePrompt").html("不可数字开头，低于4位，不包含中文").css("color", "red");
 				return false;
 			} else {
 				$("#namePrompt").html("可用").css("color", "springgreen");

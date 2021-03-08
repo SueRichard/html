@@ -105,7 +105,7 @@
 		function checkCity() {
 			var val = $("#city").val();
 			if (val == "-1") {
-				$("cityPrompt").html("请先选择省份和城市").css("color", "red");
+				$("#cityPrompt").html("请先选择省份和城市").css("color", "red");
 				return false;
 			}
 			return true;
